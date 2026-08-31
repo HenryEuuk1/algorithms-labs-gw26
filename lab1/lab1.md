@@ -12,11 +12,11 @@ The Fibonacci sequence is a sequence of numbers where:
 
 ```
 TODO: Answer the following questions:
-fibonacci(5) = 
-fibonacci(6) = 
-fibonacci(7) = 
-fibonacci(8) = 
-fibonacci(9) = 
+fibonacci(5) = 3 + 2 = 5
+fibonacci(6) =  5 + 3 = 8
+fibonacci(7) = 8 + 5 = 13
+fibonacci(8) = 13 + 8 = 21
+fibonacci(9) = 21 + 13 = 34
 ```
 
 ## Basic implementation
@@ -39,7 +39,7 @@ The code version also tells you how much time does it take to complete each calc
 ```
 TODO:
 1. Explain what the code above is doing.
-A: 
+A: the code added most adjacent fibonacci number together 
 2. What happens if we remove the "if ... return ..." and only keep the last line?
 A: 
 3. What is fibonacci(20)? how much time did it take to calculate that?
