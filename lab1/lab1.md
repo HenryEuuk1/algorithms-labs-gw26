@@ -41,13 +41,13 @@ TODO:
 1. Explain what the code above is doing.
 A: the code added most adjacent fibonacci number together 
 2. What happens if we remove the "if ... return ..." and only keep the last line?
-A: 
+A: There is edge cases which fibonnacci is zero, and it will go negative 
 3. What is fibonacci(20)? how much time did it take to calculate that?
-A: 
+A: 6765  calculating this took 2.0401e-03 seconds.
 4. What is fibonacci(30)? how much time did it take to calculate that?
-A: 
+A: fibonacci(30) = 832040, calculating this took 2.4918e-01 seconds.
 5. How much time did it take you to calculate fibonacci(40)? (this might take a while...)
-A: 
+A: fibonacci(40) = 102334155, calculating this took 3.2102e+01 seconds.
 ```
 
 ## How many function calls?
@@ -55,12 +55,12 @@ A:
 Modify ``fibonacci_counting.py`` so that it does the same calculation as ``fibonacci.py``, but it also counts how many times the function ``fibonacci(n)`` had to be called. Then answer the following:
 ```
 TODO:
-1. How many function calls does fibonacci(1) take?
-2. How many function calls does fibonacci(5) take?
-3. How many function calls does fibonacci(10) take?
-4. Why is it so slow? Where does the complexity come from?
-5. Is this O(n)? is this O(2^n)? Why?
-6. Is this Ω(n)? Why?
+1. How many function calls does fibonacci(1) take?  1
+2. How many function calls does fibonacci(5) take? 15
+3. How many function calls does fibonacci(10) take? 177
+4. Why is it so slow? Where does the complexity come from? cuz same sub question calculated infinite times
+5. Is this O(n)? is this O(2^n)? Why? No, it is O(2^n)
+6. Is this Ω(n)? Why? Yes
 ```
 
 ## Memoization Optimization
