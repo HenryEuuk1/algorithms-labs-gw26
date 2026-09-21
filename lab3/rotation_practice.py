@@ -60,6 +60,13 @@ def rotate_left(tree, x):
   x.right = y.left
   if y.left is not None:
     y.left.parent = x
+  y.parent = x.parent
+  if x.parent is None:
+    tree.root = y
+  elif x == x.parent.left:
+    x.parent.left = y
+  else:
+    x.parent.right = y
   y.left = x
   x.parent = y
   update_height(x)
