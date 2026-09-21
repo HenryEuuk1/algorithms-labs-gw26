@@ -44,7 +44,9 @@ def balance_factor(node):
   Return 0 if node is None.
   """
   # TODO 4.2A: Return get_height(node.left) - get_height(node.right).
-  raise NotImplementedError("Complete balance_factor")
+  if node is None:
+    return 0
+  return get_height(node.left) - get_height(node.right)
 
 
 def rotate_left(tree, x):
@@ -54,7 +56,14 @@ def rotate_left(tree, x):
   tree.root (if x was root), and recalculates heights for x and y.
   """
   # TODO 4.2B: Rewire pointers so y = x.right rises into x's position; update heights of x then y.
-  raise NotImplementedError("Complete rotate_left")
+  y = x.right
+  x.right = y.left
+  if y.left is not None:
+    y.left.parent = x
+  y.left = x
+  x.parent = y
+  update_height(x)
+  update_height(y)
 
 
 def rotate_right(tree, y):
@@ -64,7 +73,14 @@ def rotate_right(tree, y):
   tree.root (if y was root), and recalculates heights for y and x.
   """
   # TODO 4.2C: Rewire pointers so x = y.left rises into y's position; update heights of y then x.
-  raise NotImplementedError("Complete rotate_right")
+  x = y.left
+  y.left = x.right
+  if x.right is not None:
+    x.right.parent = y
+  x.right = y
+  y.parent = x
+  update_height(y)
+  update_height(x)
 
 
 def rotate_left_right(tree, z):
@@ -73,7 +89,8 @@ def rotate_left_right(tree, z):
   Rotates left on z's left child, then rotates right on z.
   """
   # TODO 4.2D: Call rotate_left on z.left, then rotate_right on z.
-  raise NotImplementedError("Complete rotate_left_right")
+  rotate_left(tree, z.left)
+  rotate_right(tree, z)
 
 
 def rotate_right_left(tree, z):
@@ -82,7 +99,8 @@ def rotate_right_left(tree, z):
   Rotates right on z's right child, then rotates left on z.
   """
   # TODO 4.2E: Call rotate_right on z.right, then rotate_left on z.
-  raise NotImplementedError("Complete rotate_right_left")
+  rotate_right(tree, z.right)
+  rotate_left(tree, z)  
 
 
 if __name__ == "__main__":
