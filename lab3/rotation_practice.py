@@ -77,6 +77,13 @@ def rotate_right(tree, y):
   y.left = x.right
   if x.right is not None:
     x.right.parent = y
+  x.parent = y.parent
+  if y.parent is None:
+    tree.root = x
+  elif y == y.parent.left:
+    y.parent.left = x
+  else:
+    y.parent.right = x
   x.right = y
   y.parent = x
   update_height(y)
